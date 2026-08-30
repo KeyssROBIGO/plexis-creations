@@ -206,6 +206,12 @@
   .quote .who strong{display:block;color:var(--ink);font-size:.9rem;font-family:'Inter',sans-serif;font-style:normal}
   .quote .who span{font-size:.8rem;color:var(--muted)}
 
+  .rating-badge{display:inline-flex;align-items:center;gap:12px;margin-top:20px;padding:9px 16px;
+    border:1px solid var(--line);border-radius:999px;background:var(--glass);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+  .rating-badge span{font-size:.85rem;color:var(--text)}
+  .rating-badge strong{color:var(--ink);font-weight:700}
+
   .google-review{
     margin-top:26px;position:relative;overflow:hidden;
     display:flex;align-items:center;gap:26px;flex-wrap:wrap;
@@ -493,8 +499,18 @@
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">Preuve sociale</span>
-        <h2>Ce que disent les <span class="grad-text">professionnels</span></h2>
-        <p>Retours de clients B2B accompagnés par l'atelier ces deux dernières années.</p>
+        <h2>Ce que disent nos <span class="grad-text">clients</span></h2>
+        <p>Des retours vérifiés, laissés par des professionnels et des particuliers accompagnés par l'atelier.</p>
+        <div class="rating-badge">
+          <div class="stars" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
+          </div>
+          <span><strong>5,0</strong> · 8 avis Google</span>
+        </div>
       </div>
       <div class="quotes">
         <figure class="quote reveal">
@@ -505,10 +521,10 @@
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
           </div>
-          <blockquote>« Une enseigne qui a changé la perception de la boutique en vitrine. Le conseil sur les matières a fait toute la différence. »</blockquote>
+          <blockquote>« Je recommande Plexi Création à 1000% ! Vraiment très satisfaite de son travail. Il a été à l'écoute du début à la fin et surtout il a su s'adapter à ce que je voulais mais aussi aux contraintes de ma vitrine. C'est quelqu'un de très créatif, à l'écoute et qui cherche vraiment à trouver une solution pour satisfaire son client. »</blockquote>
           <figcaption>
-            <span class="av">CM</span>
-            <span class="who"><strong>Camille Mercier</strong><span>Gérante, Maison Mercier — Bordeaux</span></span>
+            <span class="av">SS</span>
+            <span class="who"><strong>Samira Safir</strong><span>Avis Google</span></span>
           </figcaption>
         </figure>
         <figure class="quote reveal">
@@ -519,10 +535,10 @@
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
           </div>
-          <blockquote>« 32 boutiques équipées en 4 mois, sans un couac. La coordination du déploiement a été irréprochable. »</blockquote>
+          <blockquote>« Travail de grande qualité, finitions impeccables et très soignées. Les portes en plexiglas de notre vitrine ont été réalisées sur mesure avec beaucoup de précision. Le résultat est esthétique, solide et très pratique au quotidien. Artisan sérieux, à l'écoute, respect des délais et excellent rapport qualité-prix. »</blockquote>
           <figcaption>
-            <span class="av">TR</span>
-            <span class="who"><strong>Thomas Roussel</strong><span>Directeur réseau, Enseigne retail nationale</span></span>
+            <span class="av">AA</span>
+            <span class="who"><strong>Abdellah Aidouch</strong><span>Avis Google</span></span>
           </figcaption>
         </figure>
         <figure class="quote reveal">
@@ -533,10 +549,10 @@
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
           </div>
-          <blockquote>« Ils ont compris notre charte mieux que nous. Les prototypes physiques nous ont évité une erreur coûteuse. »</blockquote>
+          <blockquote>« Très bon travail et service client au top ! (professionnel et réactif) »</blockquote>
           <figcaption>
-            <span class="av">LF</span>
-            <span class="who"><strong>Léa Fontaine</strong><span>Architecte d'intérieur, Studio Fontaine</span></span>
+            <span class="av">CA</span>
+            <span class="who"><strong>Clément Anglade</strong><span>Avis Google</span></span>
           </figcaption>
         </figure>
       </div>
