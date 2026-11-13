@@ -3,493 +3,248 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Plexis Créations — Artisanat français sur-mesure pour professionnels</title>
-<meta name="description" content="Plexis Créations, atelier artisanal français spécialisé dans la création sur-mesure : enseignes, signalétique et objets personnalisés pour commerçants, entreprises et professionnels.">
+<title>Plexis Créations — Plexiglas sur-mesure, gravure et découpe laser</title>
+<meta name="description" content="Plexis Créations fabrique sur-mesure vos pièces en plexiglas : mariage, événementiel, boulangerie, marchés, commerçants. Gravure et découpe laser, livraison. Devis gratuit.">
+<meta name="theme-color" content="#080514">
+<link rel="canonical" href="https://plexiscreation.fr/">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Plexis Créations — Plexiglas sur-mesure, gravure et découpe laser">
+<meta property="og:description" content="Plexis Créations fabrique sur-mesure vos pièces en plexiglas : mariage, événementiel, boulangerie, marchés, commerçants. Gravure et découpe laser, livraison. Devis gratuit.">
+<meta property="og:url" content="https://plexiscreation.fr/">
+<meta property="og:image" content="https://plexiscreation.fr/images/og.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --blue:#5AADFF;
-    --violet:#A060FF;
-    --pink:#F055CC;
-    --bg:#080514;
-    --bg-2:#0d0a1f;
-    --ink:#ffffff;
-    --text:rgba(255,255,255,.74);
-    --muted:rgba(255,255,255,.55);
-    --line:rgba(255,255,255,.10);
-    --glass:rgba(255,255,255,.045);
-    --glass-strong:rgba(255,255,255,.07);
-    --grad:linear-gradient(120deg,var(--blue) 0%,var(--violet) 50%,var(--pink) 100%);
-    --radius:20px;
-    --ease:cubic-bezier(.22,.61,.36,1);
-    --maxw:1180px;
-  }
-
-  *,*::before,*::after{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-    font-size:16px;
-    line-height:1.65;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-
-  /* ambient gradient field */
-  .aura{position:fixed;inset:0;z-index:-2;pointer-events:none;overflow:hidden}
-  .aura::before,.aura::after{
-    content:"";position:absolute;border-radius:50%;filter:blur(120px);opacity:.35;
-  }
-  .aura::before{width:60vw;height:60vw;left:-15vw;top:-20vw;background:radial-gradient(circle at 30% 30%,var(--blue),transparent 60%)}
-  .aura::after{width:55vw;height:55vw;right:-18vw;top:10vh;background:radial-gradient(circle at 60% 40%,var(--pink),transparent 60%)}
-  .aura span{position:absolute;width:50vw;height:50vw;left:20vw;bottom:-25vw;border-radius:50%;filter:blur(130px);opacity:.28;background:radial-gradient(circle,var(--violet),transparent 60%)}
-  body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
-    background:
-      radial-gradient(1px 1px at 20% 30%,rgba(255,255,255,.25),transparent),
-      radial-gradient(1px 1px at 70% 60%,rgba(255,255,255,.18),transparent),
-      radial-gradient(1px 1px at 40% 80%,rgba(255,255,255,.15),transparent);
-    background-size:auto;opacity:.5}
-
-  a{color:inherit}
-  img{max-width:100%;display:block}
-  h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:500;color:var(--ink);line-height:1.08;margin:0}
-  p{margin:0}
-  .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-  section{padding:clamp(80px,12vw,140px) 0;position:relative}
-  .eyebrow{
-    display:inline-flex;align-items:center;gap:10px;
-    font-family:'Inter',sans-serif;font-style:normal;
-    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
-    color:var(--muted);font-weight:600;margin-bottom:22px;
-  }
-  .eyebrow::before{content:"";width:28px;height:1px;background:var(--grad)}
-  .section-head{max-width:640px;margin-bottom:56px}
-  .section-head h2{font-size:clamp(2.1rem,4.6vw,3.4rem);margin-bottom:18px}
-  .section-head p{color:var(--text);font-size:1.02rem}
-
-  /* buttons */
-  .btn{
-    --pad:15px 26px;
-    display:inline-flex;align-items:center;justify-content:center;gap:10px;
-    padding:var(--pad);border-radius:999px;
-    font-family:'Inter',sans-serif;font-weight:600;font-size:.95rem;
-    text-decoration:none;cursor:pointer;border:1px solid transparent;
-    transition:transform .2s var(--ease),box-shadow .25s var(--ease),background .25s var(--ease),border-color .25s var(--ease);
-  }
-  .btn-primary{background:var(--grad);color:#0a0713;box-shadow:0 10px 30px -8px rgba(160,96,255,.5)}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 44px -10px rgba(240,85,204,.55)}
-  .btn-ghost{background:var(--glass);color:var(--ink);border-color:var(--line);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-  .btn-ghost:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.28);background:var(--glass-strong)}
-  .btn svg{width:17px;height:17px}
-
-  :where(a,button,input,textarea,select,summary):focus-visible{
-    outline:2px solid var(--blue);outline-offset:3px;border-radius:8px;
-  }
-
-  /* header */
-  header{
-    position:sticky;top:0;z-index:50;
-    backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
-    background:rgba(8,5,20,.55);
-    border-bottom:1px solid transparent;
-    transition:border-color .3s var(--ease),background .3s var(--ease);
-  }
-  header.scrolled{border-bottom-color:var(--line);background:rgba(8,5,20,.8)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
-  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:600;color:var(--ink);letter-spacing:.01em}
-  .brand .mark{width:34px;height:34px;border-radius:10px;background:var(--grad);display:grid;place-items:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:700;color:#0a0713;font-size:1.15rem}
-  .brand small{display:block;font-weight:400;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
-  .nav-links{display:flex;align-items:center;gap:34px}
-  .nav-links a{text-decoration:none;font-size:.9rem;color:var(--text);transition:color .2s var(--ease)}
-  .nav-links a:hover{color:var(--ink)}
-  .nav .btn{--pad:11px 20px;font-size:.85rem}
-  .menu-toggle{display:none;background:none;border:0;color:var(--ink);cursor:pointer;padding:8px}
-  .menu-toggle svg{width:26px;height:26px}
-
-  /* hero */
-  .hero{padding-top:clamp(70px,10vw,120px);padding-bottom:clamp(70px,10vw,120px)}
-  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
-  .hero h1{font-size:clamp(2.9rem,7vw,5.2rem);letter-spacing:-.01em;margin-bottom:26px}
-  .hero h1 .line{display:block}
-  .hero-lead{font-size:1.12rem;max-width:33ch;margin-bottom:36px}
-  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:40px}
-  .hero-stats{display:flex;gap:34px;flex-wrap:wrap}
-  .hero-stats .n{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:2rem;color:var(--ink);line-height:1}
-  .hero-stats .l{font-size:.8rem;color:var(--muted);letter-spacing:.04em}
-
-  .hero-visual{position:relative}
-  .panel{
-    border:1px solid var(--line);border-radius:var(--radius);
-    background:var(--glass);
-    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  }
-  .hero-card{padding:26px;position:relative;overflow:hidden}
-  .hero-card::before{content:"";position:absolute;inset:0;background:var(--grad);opacity:.14;mix-blend-mode:screen}
-  .hero-card .tag{position:relative;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
-  .hero-card h3{position:relative;font-size:1.7rem;margin:10px 0 6px}
-  .hero-card p{position:relative;font-size:.9rem}
-  .hero-float{
-    position:absolute;right:-18px;bottom:-26px;padding:18px 22px;
-    display:flex;align-items:center;gap:14px;border-radius:16px;
-  }
-  .hero-float .dot{width:38px;height:38px;border-radius:50%;background:var(--grad);display:grid;place-items:center;flex-shrink:0}
-  .hero-float .dot svg{width:19px;height:19px;color:#0a0713}
-  .hero-float strong{color:var(--ink);font-size:.9rem;display:block}
-  .hero-float span{font-size:.78rem;color:var(--muted)}
-
-  /* trust bar */
-  .trust{padding:0 0 40px}
-  .trust .wrap{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;
-    border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-top:26px;padding-bottom:26px}
-  .trust p{font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
-  .trust ul{display:flex;gap:36px;flex-wrap:wrap;list-style:none;margin:0;padding:0}
-  .trust li{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.25rem;color:rgba(255,255,255,.7)}
-
-  /* services */
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .card{padding:30px;border-radius:var(--radius);border:1px solid var(--line);background:var(--glass);
-    backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-    transition:transform .3s var(--ease),border-color .3s var(--ease),background .3s var(--ease)}
-  .card:hover{transform:translateY(-6px);border-color:rgba(255,255,255,.22);background:var(--glass-strong)}
-  .card .ico{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;border:1px solid var(--line);background:rgba(255,255,255,.04);margin-bottom:20px}
-  .card .ico svg{width:24px;height:24px;color:var(--blue)}
-  .card h3{font-size:1.55rem;margin-bottom:10px}
-  .card p{font-size:.92rem}
-
-  /* process */
-  .process{margin-top:70px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:step}
-  .step{padding:24px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.025);position:relative}
-  .step::before{counter-increment:step;content:"0" counter(step);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.6rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .step h4{font-family:'Inter',sans-serif;color:var(--ink);font-size:1rem;font-weight:600;margin:8px 0 6px}
-  .step p{font-size:.85rem;color:var(--muted)}
-
-  /* gallery */
-  .gallery{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:200px;gap:16px}
-  .tile{
-    position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);
-    display:flex;flex-direction:column;justify-content:flex-end;padding:22px;
-    color:var(--ink);text-decoration:none;isolation:isolate;
-    transition:transform .35s var(--ease)}
-  .tile::before{content:"";position:absolute;inset:0;z-index:-2;background:var(--tile,var(--grad))}
-  .tile::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(8,5,20,0) 30%,rgba(8,5,20,.82) 100%)}
-  .tile:hover{transform:scale(1.02)}
-  .tile .t-cat{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.8)}
-  .tile h3{font-size:1.5rem;margin-top:4px}
-  .tile .t-mat{font-size:.8rem;color:rgba(255,255,255,.7);margin-top:4px}
-  .tile.big{grid-column:span 3;grid-row:span 2}
-  .tile.wide{grid-column:span 3}
-  .tile.tall{grid-column:span 2;grid-row:span 2}
-  .tile.reg{grid-column:span 2}
-  .g1{--tile:linear-gradient(140deg,#5AADFF,#A060FF)}
-  .g2{--tile:linear-gradient(140deg,#A060FF,#F055CC)}
-  .g3{--tile:linear-gradient(140deg,#F055CC,#5AADFF)}
-  .g4{--tile:linear-gradient(140deg,#5AADFF,#3a2b8c)}
-  .g5{--tile:linear-gradient(140deg,#7b3ff2,#F055CC)}
-  .g6{--tile:linear-gradient(140deg,#F055CC,#A060FF)}
-
-  /* testimonials */
-  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .quote{padding:30px;border-radius:var(--radius);border:1px solid var(--line);background:var(--glass);
-    backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex;flex-direction:column;gap:20px}
-  .quote .stars{display:flex;gap:3px}
-  .quote .stars svg{width:16px;height:16px;color:var(--pink)}
-  .quote blockquote{margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.28rem;line-height:1.4;color:rgba(255,255,255,.9)}
-  .quote figcaption{display:flex;align-items:center;gap:13px;margin-top:auto}
-  .quote .av{width:44px;height:44px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;color:#0a0713;flex-shrink:0}
-  .quote .who strong{display:block;color:var(--ink);font-size:.9rem;font-family:'Inter',sans-serif;font-style:normal}
-  .quote .who span{font-size:.8rem;color:var(--muted)}
-
-  .rating-badge{display:inline-flex;align-items:center;gap:12px;margin-top:20px;padding:9px 16px;
-    border:1px solid var(--line);border-radius:999px;background:var(--glass);
-    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-  .rating-badge span{font-size:.85rem;color:var(--text)}
-  .rating-badge strong{color:var(--ink);font-weight:700}
-
-  .google-review{
-    margin-top:26px;position:relative;overflow:hidden;
-    display:flex;align-items:center;gap:26px;flex-wrap:wrap;
-    padding:32px clamp(24px,4vw,44px);border-radius:var(--radius);
-    border:1px solid var(--line);background:var(--glass-strong);
-    backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
-  }
-  .google-review::before{content:"";position:absolute;inset:0;background:var(--grad);opacity:.14;mix-blend-mode:screen;pointer-events:none}
-  .gr-icon{position:relative;width:56px;height:56px;border-radius:16px;flex-shrink:0;display:grid;place-items:center;background:var(--grad)}
-  .gr-icon svg{width:26px;height:26px;color:#0a0713}
-  .gr-body{position:relative;flex:1;min-width:240px}
-  .gr-body h3{font-size:1.55rem;margin-bottom:6px}
-  .gr-body p{font-size:.95rem;max-width:52ch}
-  .google-review .btn{position:relative;flex-shrink:0}
-  @media (max-width:640px){
-    .google-review{gap:18px}
-    .google-review .btn{width:100%}
-  }
-
-  /* faq */
-  .faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
-  .faq-list{display:flex;flex-direction:column;gap:12px}
-  .faq-item{border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.025);overflow:hidden}
-  .faq-item summary{list-style:none;cursor:pointer;padding:20px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;
-    font-family:'Inter',sans-serif;font-weight:500;color:var(--ink);font-size:1rem}
-  .faq-item summary::-webkit-details-marker{display:none}
-  .faq-item summary .pm{width:22px;height:22px;flex-shrink:0;position:relative;transition:transform .3s var(--ease)}
-  .faq-item summary .pm::before,.faq-item summary .pm::after{content:"";position:absolute;background:var(--violet);border-radius:2px}
-  .faq-item summary .pm::before{top:10px;left:2px;right:2px;height:2px}
-  .faq-item summary .pm::after{left:10px;top:2px;bottom:2px;width:2px}
-  .faq-item[open] summary .pm{transform:rotate(135deg)}
-  .faq-item .a{padding:0 22px 22px;font-size:.93rem;color:var(--text)}
-
-  /* final cta */
-  .final{position:relative}
-  .final-card{
-    position:relative;overflow:hidden;border-radius:32px;border:1px solid var(--line);
-    padding:clamp(40px,6vw,72px);
-    background:var(--glass-strong);
-    backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
-  }
-  .final-card::before{content:"";position:absolute;inset:0;background:var(--grad);opacity:.16;mix-blend-mode:screen}
-  .final-inner{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
-  .final h2{font-size:clamp(2.2rem,5vw,3.6rem);margin-bottom:18px}
-  .final p{margin-bottom:28px;font-size:1.03rem}
-  .final ul{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
-  .final li{display:flex;gap:11px;align-items:flex-start;font-size:.92rem}
-  .final li svg{width:18px;height:18px;color:var(--blue);flex-shrink:0;margin-top:3px}
-
-  form{display:flex;flex-direction:column;gap:16px}
-  .field{display:flex;flex-direction:column;gap:7px}
-  .field label{font-size:.82rem;color:var(--muted);letter-spacing:.03em}
-  .field input,.field select,.field textarea{
-    background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:12px;
-    padding:13px 15px;color:var(--ink);font-family:inherit;font-size:.92rem;transition:border-color .2s var(--ease),background .2s var(--ease)}
-  .field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,.35)}
-  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--violet);background:rgba(255,255,255,.06)}
-  .field textarea{resize:vertical;min-height:90px}
-  .field select{appearance:none}
-  form .btn{width:100%;margin-top:4px}
-  .form-note{font-size:.78rem;color:var(--muted);text-align:center}
-
-  /* footer */
-  footer{border-top:1px solid var(--line);padding:60px 0 40px}
-  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:44px}
-  footer h5{font-family:'Inter',sans-serif;color:var(--ink);font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;margin:0 0 16px;font-weight:600}
-  footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
-  footer a{text-decoration:none;font-size:.88rem;color:var(--text);transition:color .2s var(--ease)}
-  footer a:hover{color:var(--ink)}
-  .foot-brand p{font-size:.9rem;max-width:32ch;margin-top:14px}
-  .foot-bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;
-    border-top:1px solid var(--line);padding-top:24px;font-size:.8rem;color:var(--muted)}
-
-  /* reveal animation */
-  .reveal{opacity:0;transform:translateY(14px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
-  .reveal.in{opacity:1;transform:none}
-
-  @media (max-width:960px){
-    .hero-grid{grid-template-columns:1fr;gap:48px}
-    .hero-visual{max-width:440px}
-    .cards,.quotes{grid-template-columns:1fr 1fr}
-    .process{grid-template-columns:1fr 1fr}
-    .faq-grid{grid-template-columns:1fr;gap:32px}
-    .final-inner{grid-template-columns:1fr;gap:36px}
-    .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px}
-    .tile.big,.tile.wide,.tile.tall,.tile.reg{grid-column:span 2;grid-row:span 1}
-    .foot-grid{grid-template-columns:1fr 1fr}
-  }
-  @media (max-width:640px){
-    .nav-links{
-      position:absolute;top:72px;left:0;right:0;
-      flex-direction:column;align-items:stretch;gap:0;
-      background:rgba(8,5,20,.97);border-bottom:1px solid var(--line);
-      padding:8px 24px 20px;
-      transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity .2s var(--ease),transform .2s var(--ease)}
-    .nav-links.open{transform:none;opacity:1;pointer-events:auto}
-    .nav-links a{padding:14px 0;border-bottom:1px solid var(--line)}
-    .nav-links .btn{margin-top:14px}
-    .menu-toggle{display:block}
-    .cards,.quotes,.process{grid-template-columns:1fr}
-    .gallery{grid-template-columns:1fr}
-    .tile.big,.tile.wide,.tile.tall,.tile.reg{grid-column:span 1}
-    .trust .wrap{justify-content:center;text-align:center}
-    .foot-grid{grid-template-columns:1fr}
-    .hero-float{position:static;margin-top:16px}
-  }
-
-  @media (prefers-reduced-motion:reduce){
-    *{scroll-behavior:auto !important}
-    .reveal{opacity:1 !important;transform:none !important;transition:none}
-    .btn:hover,.card:hover,.tile:hover{transform:none}
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Plexis Créations",
+  "description": "Fabrication sur-mesure en plexiglas, gravure et découpe laser, livraison.",
+  "url": "https://plexiscreation.fr/",
+  "logo": "https://plexiscreation.fr/images/logo.png",
+  "image": "https://plexiscreation.fr/images/og.jpg",
+  "telephone": "+33609980925",
+  "email": "plexiscreations@gmail.com",
+  "sameAs": [
+    "https://instagram.com/plexis_creations"
+  ]
+}
+</script>
 </head>
 <body>
 <div class="aura" aria-hidden="true"><span></span></div>
-
 <header id="header">
   <div class="wrap nav">
-    <a href="#top" class="brand">
-      <span class="mark">P</span>
-      <span>Plexis Créations<small>Atelier français</small></span>
+    <a href="index.html" class="brand" aria-label="Plexis Créations, accueil">
+      <img src="images/logo.png" alt="" width="42" height="42">
+      <span>Plexis Créations<small>Gravure &amp; découpe laser</small></span>
     </a>
     <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
-      <a href="#savoir-faire">Savoir-faire</a>
-      <a href="#realisations">Réalisations</a>
-      <a href="#avis">Avis clients</a>
-      <a href="#faq">FAQ</a>
-      <a href="#devis" class="btn btn-primary">Devis gratuit</a>
+      <a href="index.html" aria-current="page">Accueil</a>
+      <div class="dd">
+        <button class="dd-btn" type="button" aria-expanded="false" aria-controls="ddMenu">Nos univers
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="dd-menu" id="ddMenu"><a href="mariage-evenementiel.html">Mariage & événementiel<small>Décor, souvenirs, buffets</small></a><a href="boulangerie-patisserie.html">Boulangerie & pâtisserie<small>Vitrines, cloches, présentoirs</small></a><a href="marches.html">Marchés & commerces de bouche<small>Protections, présentoirs, étiquettes</small></a><a href="artisans-commercants.html">Artisans & commerçants<small>PLV, vitrines, logo gravé</small></a></div>
+      </div>
+      <a href="index.html#realisations">Créations</a>
+      <a href="index.html#avis">Avis</a>
+      <a href="devis.html" class="btn btn-primary">Devis gratuit</a>
     </nav>
     <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
   </div>
 </header>
-
 <main id="top">
 
-  <!-- HERO -->
+  <!-- ACCUEIL -->
   <section class="hero" id="accueil">
     <div class="wrap hero-grid">
       <div>
-        <span class="eyebrow reveal">Artisanat sur-mesure · B2B</span>
-        <h1 class="reveal">
-          <span class="line">Donnez à votre marque</span>
-          <span class="line grad-text">une présence tangible.</span>
-        </h1>
-        <p class="hero-lead reveal">Enseignes, signalétique et objets personnalisés conçus et fabriqués dans notre atelier français. Pour les commerçants et les entreprises qui ne laissent rien au hasard.</p>
+        <span class="eyebrow reveal">Plexiglas sur-mesure</span>
+        <h1 class="reveal"><span class="line">Le plexiglas,</span><span class="line grad-text">façonné pour vous.</span></h1>
+        <p class="hero-lead reveal">Décor de mariage, vitrine de boulangerie, présentoir de marché ou cadeau gravé : Plexis Créations imagine, fabrique et vous livre vos pièces en plexiglas.</p>
         <div class="hero-cta reveal">
-          <a href="#devis" class="btn btn-primary">
-            Demander un devis
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-          <a href="#realisations" class="btn btn-ghost">Voir nos réalisations</a>
+          <a href="devis.html" class="btn btn-primary">Demander un devis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a href="#univers" class="btn btn-ghost">Voir nos univers</a>
         </div>
-        <div class="hero-stats reveal">
-          <div><div class="n">250+</div><div class="l">professionnels accompagnés</div></div>
-          <div><div class="n">15 ans</div><div class="l">de métier en atelier</div></div>
-          <div><div class="n">100%</div><div class="l">fabrication française</div></div>
-        </div>
+        <ul class="chips reveal" aria-label="Nos points forts">
+          <li><b>Fabrication</b> sur-mesure</li><li><b>Gravure</b> laser</li><li><b>Découpe</b> laser</li><li><b>Livraison</b></li>
+        </ul>
       </div>
       <div class="hero-visual reveal">
-        <div class="panel hero-card">
-          <span class="tag">Projet en cours · Atelier</span>
-          <h3>Enseigne lumineuse laiton &amp; verre dépoli</h3>
-          <p>Lettrage découpé à la main, rétroéclairage LED sur-mesure, patine réalisée à l'atelier pour une brasserie parisienne.</p>
-        </div>
-        <div class="panel hero-float">
-          <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-          <span><strong>Devis sous 48 h</strong><span>Réponse d'un artisan, pas d'un formulaire</span></span>
+        <div class="shot shot-a"><img src="images/tour-eiffel-mariage.jpg" alt="Tour Eiffel en plexiglas découpée au laser sur une table de mariage" width="1066" height="1400" style="object-position:center 35%"></div>
+        <div class="shot shot-b"><img src="images/presentoir-cornets.jpg" alt="Présentoir à cornets en plexiglas chez un glacier" width="1089" height="1400" loading="lazy"></div>
+        <div class="hero-badge">
+          <div class="stars" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg></div>
+          <div><strong>5,0 sur Google</strong><span>Des clients satisfaits</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TRUST -->
-  <div class="trust">
-    <div class="wrap">
-      <p>Ils nous font confiance</p>
-      <ul>
-        <li>Commerces indépendants</li>
-        <li>Groupes hôteliers</li>
-        <li>Cabinets &amp; études</li>
-        <li>Architectes d'intérieur</li>
-        <li>Franchises</li>
-      </ul>
+  <!-- HISTOIRE -->
+  <section id="atelier">
+    <div class="wrap story">
+      <div class="story-photos reveal">
+        <div class="shot shot-a"><img src="images/pelle-pain-gravee.jpg" alt="Corbeille à pain en plexiglas gravée d'un épi de blé" loading="lazy"></div>
+        <div class="shot shot-b"><img src="images/plaques-gravees.jpg" alt="Plaques en plexiglas gravées au laser" loading="lazy"></div>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">L'atelier</span>
+        <h2>La transparence, <span class="grad-text">notre matière première</span></h2>
+        <p>Chez Plexis Créations, on aime ce que le plexiglas a de rare : il protège sans cacher, il met en valeur sans prendre la place. Une cloche sur un gâteau, une vitrine autour d'un objet précieux, un prénom gravé dans la lumière.</p>
+        <p>Chaque pièce part d'une conversation. Vous nous racontez votre boutique, votre événement ou votre idée cadeau ; on la dessine, on la découpe et on la grave au laser, puis on vous la livre, prête à servir.</p>
+        <p>Boulangers, traiteurs, commerçants, artisans, futurs mariés : on fabrique pour celles et ceux qui veulent un objet juste, solide et beau, fait pour eux et pas pour tout le monde.</p>
+        <p class="sign">Plexis Créations</p>
+      </div>
     </div>
-  </div>
+  </section>
 
   <!-- SAVOIR-FAIRE -->
   <section id="savoir-faire">
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">Savoir-faire</span>
-        <h2>Un atelier, tous les métiers de la <span class="grad-text">matière</span></h2>
-        <p>Nous maîtrisons la chaîne complète : conception, usinage, assemblage et finition. Un seul interlocuteur, du croquis à la pose.</p>
+        <h2>Ce que l'on fait <span class="grad-text">pour vous</span></h2>
+        <p>Une idée, un croquis, un logo ou une simple photo suffisent. On s'occupe du reste, jusqu'à la livraison.</p>
       </div>
       <div class="cards">
-        <article class="card reveal">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="12" rx="2"/><line x1="12" y1="16" x2="12" y2="21"/><line x1="8" y1="21" x2="16" y2="21"/></svg></span>
-          <h3>Enseignes &amp; façades</h3>
-          <p>Lettres boîtiers, lettres découpées, blocs rétroéclairés, totems. Métal, bois massif, plexi, verre. Étude photométrique et conformité incluses.</p>
+        <article class="card reveal ">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></span>
+          <h3>Fabrication sur-mesure</h3><p>Boîtes, cloches, supports, présentoirs : chaque pièce est réalisée aux dimensions exactes de votre projet.</p>
         </article>
-        <article class="card reveal">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
-          <h3>Signalétique intérieure</h3>
-          <p>Plaques, directionnels, numérotation, pictogrammes accessibles. Systèmes modulaires cohérents avec votre identité, déclinables sur plusieurs sites.</p>
+        <article class="card reveal ">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></span>
+          <h3>Gravure laser</h3><p>Logos, prénoms, textes, dessins : gravés avec finesse sur plaques, boîtes, cadeaux et objets personnalisés.</p>
         </article>
-        <article class="card reveal">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 17l-6.3 4.4L8 14 2 9.4h7.6z"/></svg></span>
-          <h3>Objets personnalisés</h3>
-          <p>Cadeaux d'affaires, trophées, présentoirs, mobilier d'accueil, éléments de PLV. Petites et moyennes séries gravées, marquées ou patinées à la main.</p>
+        <article class="card reveal ">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></span>
+          <h3>Découpe laser</h3><p>Formes précises, lettres, silhouettes, pièces sur plan : une découpe nette et des bords propres.</p>
         </article>
-        <article class="card reveal">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a5 5 0 0 0-6.4 6.4L2 19l3 3 6.3-6.3a5 5 0 0 0 6.4-6.4l-3 3-2.7-.7-.7-2.7z"/></svg></span>
-          <h3>Sur-mesure &amp; prototypage</h3>
-          <p>Une idée, un cahier des charges exigeant ? Nous prototypons, testons les matériaux et industrialisons la pièce jusqu'à la finition parfaite.</p>
+        <article class="card reveal ">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="12" y2="21"/></svg></span>
+          <h3>Vitrines &amp; protections</h3><p>Portes et façades de vitrine, protections de comptoir, cloches : pensées pour votre espace et l'usage au quotidien.</p>
         </article>
-        <article class="card reveal">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M17 7l2.1-2.1M4.9 19.1L7 17"/></svg></span>
-          <h3>Direction artistique</h3>
-          <p>Choix des matières, échantillons physiques, rendus 3D avant fabrication. Nous traduisons votre charte en objet, pas l'inverse.</p>
+        <article class="card reveal ">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"/><path d="M3 9l2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/><line x1="12" y1="3" x2="12" y2="9"/></svg></span>
+          <h3>Présentoirs &amp; PLV</h3><p>Supports de comptoir, présentoirs produits, plateaux à étages : mettez vos produits en valeur.</p>
         </article>
-        <article class="card reveal">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
-          <h3>Pose &amp; accompagnement</h3>
-          <p>Relevés sur site, installation par nos équipes, maintenance et SAV. Déploiement multi-sites coordonné partout en France.</p>
+        <article class="card reveal ">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></span>
+          <h3>Objets personnalisés</h3><p>Cadeaux, porte-clés, urnes, souvenirs d'événement : des pièces uniques pour les pros comme pour les particuliers.</p>
         </article>
       </div>
+      <div class="google-review reveal" style="margin-top:22px">
+        <div class="gr-body">
+          <h3>Et on vous livre.</h3>
+          <p>Votre pièce est terminée ? On vous l'apporte. Les modalités et la zone de livraison sont précisées avec votre devis.</p>
+        </div>
+        <a class="btn btn-primary" href="devis.html">Demander un devis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <ol class="process">
+        <li class="step reveal"><h4>Vous nous parlez du projet</h4><p>Formulaire, téléphone ou Instagram : décrivez votre idée, avec une photo ou un croquis si vous en avez.</p></li>
+        <li class="step reveal"><h4>Conseil &amp; devis gratuit</h4><p>On vous propose la meilleure solution (dimensions, épaisseur, finition) et un devis clair.</p></li>
+        <li class="step reveal"><h4>Fabrication</h4><p>Découpe, gravure et assemblage de votre pièce avec soin.</p></li>
+        <li class="step reveal"><h4>Livraison</h4><p>Votre création vous est livrée, prête à l'emploi.</p></li>
+      </ol>
+    </div>
+  </section>
 
-      <div class="process">
-        <div class="step reveal"><h4>Échange</h4><p>On écoute votre projet, vos contraintes de lieu et de budget. Conseil matières dès le premier rendez-vous.</p></div>
-        <div class="step reveal"><h4>Conception</h4><p>Plans techniques, rendus 3D et échantillons physiques validés ensemble avant tout lancement.</p></div>
-        <div class="step reveal"><h4>Fabrication atelier</h4><p>Usinage, assemblage et finitions à la main dans notre atelier. Contrôle qualité pièce par pièce.</p></div>
-        <div class="step reveal"><h4>Livraison &amp; pose</h4><p>Installation soignée par nos équipes, remise d'un dossier d'entretien, suivi dans la durée.</p></div>
+  <!-- UNIVERS -->
+  <section id="univers">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Nos univers</span>
+        <h2>Trouvez ce qu'il vous faut <span class="grad-text">selon votre métier</span></h2>
+        <p>Chaque univers a ses besoins. Choisissez le vôtre pour voir les idées et les créations qui vous correspondent.</p>
+      </div>
+      <div class="univers">
+        <a class="u-card reveal" href="mariage-evenementiel.html">
+          <img src="images/tour-eiffel-mariage.jpg" alt="" loading="lazy">
+          <h3>Mariage & événementiel</h3><p>Décor, souvenirs, buffets</p>
+          <span class="go">Découvrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
+        <a class="u-card reveal" href="boulangerie-patisserie.html">
+          <img src="images/pelles-pain-tailles.jpg" alt="" loading="lazy">
+          <h3>Boulangerie & pâtisserie</h3><p>Vitrines, cloches, présentoirs</p>
+          <span class="go">Découvrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
+        <a class="u-card reveal" href="marches.html">
+          <img src="images/presentoirs-comptoir.jpg" alt="" loading="lazy">
+          <h3>Marchés & commerces de bouche</h3><p>Protections, présentoirs, étiquettes</p>
+          <span class="go">Découvrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
+        <a class="u-card reveal" href="artisans-commercants.html">
+          <img src="images/vitrine-sculpture.jpg" alt="" loading="lazy">
+          <h3>Artisans & commerçants</h3><p>PLV, vitrines, logo gravé</p>
+          <span class="go">Découvrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- REALISATIONS -->
+  <!-- CRÉATIONS -->
   <section id="realisations">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Réalisations</span>
-        <h2>Des pièces qui <span class="grad-text">durent</span>, pour des marques qui comptent</h2>
-        <p>Un aperçu de projets récents livrés à des commerçants, des groupes et des indépendants exigeants.</p>
+        <span class="eyebrow">Créations</span>
+        <h2>Quelques pièces <span class="grad-text">signées Plexis</span></h2>
+        <p>Cliquez sur une photo pour l'agrandir. Retrouvez toutes les créations dans chaque univers.</p>
       </div>
-      <div class="gallery">
-        <a href="#devis" class="tile big g1 reveal">
-          <span class="t-cat">Enseigne · Hôtellerie</span>
-          <h3>Façade laiton brossé — Hôtel 4★, Lyon</h3>
-          <span class="t-mat">Laiton massif · rétroéclairage LED · pose nacelle</span>
-        </a>
-        <a href="#devis" class="tile reg g2 reveal">
-          <span class="t-cat">Signalétique</span>
-          <h3>Parcours patient — Clinique</h3>
-          <span class="t-mat">Aluminium laqué · braille</span>
-        </a>
-        <a href="#devis" class="tile reg g3 reveal">
-          <span class="t-cat">Objet</span>
-          <h3>Trophées gravés — 120 ex.</h3>
-          <span class="t-mat">Verre &amp; chêne huilé</span>
-        </a>
-        <a href="#devis" class="tile wide g4 reveal">
-          <span class="t-cat">Retail · Franchise</span>
-          <h3>Déploiement 32 boutiques — signalétique de caisse</h3>
-          <span class="t-mat">Corian thermoformé · marquage laser</span>
-        </a>
-        <a href="#devis" class="tile reg g5 reveal">
-          <span class="t-cat">Mobilier d'accueil</span>
-          <h3>Comptoir studio d'architecture</h3>
-          <span class="t-mat">Chêne massif · acier noir</span>
-        </a>
-        <a href="#devis" class="tile reg g6 reveal">
-          <span class="t-cat">Cadeau d'affaires</span>
-          <h3>Coffrets clients premium</h3>
-          <span class="t-mat">Noyer · gravure main</span>
-        </a>
+      <div class="gallery ">
+        <button class="tile big reveal" data-full="images/tour-eiffel-mariage.jpg">
+          <img src="images/tour-eiffel-mariage.jpg" alt="Tour Eiffel découpée au laser en plexiglas, posée sur une table de mariage" loading="lazy">
+          <span class="cap"><span class="t-cat">Découpe laser · Mariage</span><h3>Tour Eiffel en plexiglas</h3></span>
+        </button>
+        <button class="tile  reveal" data-full="images/pelles-pain-tailles.jpg">
+          <img src="images/pelles-pain-tailles.jpg" alt="Trois corbeilles à pain en plexiglas gravées d&#x27;un épi de blé, tailles S, M et L" loading="lazy">
+          <span class="cap"><span class="t-cat">Gravure · Boulangerie</span><h3>Corbeilles à pain gravées</h3></span>
+        </button>
+        <button class="tile  reveal" data-full="images/presentoir-traiteur.jpg">
+          <img src="images/presentoir-traiteur.jpg" alt="Présentoir à étages en plexiglas noir garni de bouchées apéritives" loading="lazy">
+          <span class="cap"><span class="t-cat">Présentoir · Traiteur</span><h3>Présentoir à étages</h3></span>
+        </button>
+        <button class="tile wide reveal" data-full="images/boite-gravee-prenom.jpg">
+          <img src="images/boite-gravee-prenom.jpg" alt="Boîte en plexiglas transparente gravée d&#x27;un prénom" loading="lazy">
+          <span class="cap"><span class="t-cat">Gravure · Cadeau</span><h3>Boîte gravée personnalisée</h3></span>
+        </button>
+        <button class="tile  reveal" data-full="images/vitrine-sculpture.jpg">
+          <img src="images/vitrine-sculpture.jpg" alt="Vitrine en plexiglas sur pied protégeant une sculpture" loading="lazy">
+          <span class="cap"><span class="t-cat">Sur-mesure · Déco</span><h3>Vitrine sur pied</h3></span>
+        </button>
+        <button class="tile  reveal" data-full="images/porte-cles-coeur.jpg">
+          <img src="images/porte-cles-coeur.jpg" alt="Porte-clés en forme de cœur rouge gravé Forever &amp; longer" loading="lazy">
+          <span class="cap"><span class="t-cat">Gravure · Cadeau</span><h3>Porte-clés cœur gravé</h3></span>
+        </button>
+        <button class="tile  reveal" data-full="images/miroir-urne-mariage.jpg">
+          <img src="images/miroir-urne-mariage.jpg" alt="Urne à enveloppes en plexiglas et panneau sur une table de mariage" loading="lazy">
+          <span class="cap"><span class="t-cat">Mariage</span><h3>Urne &amp; panneau</h3></span>
+        </button>
+        <button class="tile  reveal" data-full="images/presentoir-cornets.jpg">
+          <img src="images/presentoir-cornets.jpg" alt="Support à cornets en plexiglas chez un glacier" loading="lazy">
+          <span class="cap"><span class="t-cat">Glacier</span><h3>Support à cornets</h3></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM -->
+  <section id="instagram" style="padding-top:0">
+    <div class="wrap">
+      <div class="insta reveal">
+        <div>
+          <span class="eyebrow">Instagram</span>
+          <h2>Suivez l'atelier <span class="grad-text">au quotidien</span></h2>
+          <p>Nouvelles créations, coulisses de fabrication, gravures en cours : tout se passe sur notre compte Instagram.</p>
+          <a class="btn btn-primary" href="https://instagram.com/plexis_creations" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg> @plexis_creations</a>
+        </div>
+        <div class="insta-grid"><a href="https://instagram.com/plexis_creations" target="_blank" rel="noopener" aria-label="Voir sur Instagram"><img src="images/porte-cles-coeur.jpg" alt="" loading="lazy"></a><a href="https://instagram.com/plexis_creations" target="_blank" rel="noopener" aria-label="Voir sur Instagram"><img src="images/pelle-pain-gravee.jpg" alt="" loading="lazy"></a><a href="https://instagram.com/plexis_creations" target="_blank" rel="noopener" aria-label="Voir sur Instagram"><img src="images/miroir-urne-mariage.jpg" alt="" loading="lazy"></a><a href="https://instagram.com/plexis_creations" target="_blank" rel="noopener" aria-label="Voir sur Instagram"><img src="images/presentoir-cornets.jpg" alt="" loading="lazy"></a><a href="https://instagram.com/plexis_creations" target="_blank" rel="noopener" aria-label="Voir sur Instagram"><img src="images/plaques-gravees.jpg" alt="" loading="lazy"></a><a href="https://instagram.com/plexis_creations" target="_blank" rel="noopener" aria-label="Voir sur Instagram"><img src="images/cloches.jpg" alt="" loading="lazy"></a></div>
       </div>
     </div>
   </section>
@@ -498,77 +253,31 @@
   <section id="avis">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Preuve sociale</span>
-        <h2>Ce que disent nos <span class="grad-text">clients</span></h2>
-        <p>Des retours vérifiés, laissés par des professionnels et des particuliers accompagnés par l'atelier.</p>
-        <div class="rating-badge">
-          <div class="stars" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
-          </div>
-          <span><strong>5,0</strong> · 8 avis Google</span>
-        </div>
+        <span class="eyebrow">Avis clients</span>
+        <h2>Ils nous ont fait <span class="grad-text">confiance</span></h2>
+        <p>Des avis laissés sur Google par nos clients.</p>
+        <div class="rating-badge"><div class="stars" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg></div><span><strong>5,0</strong> sur Google</span></div>
       </div>
       <div class="quotes">
         <figure class="quote reveal">
-          <div class="stars" aria-label="5 sur 5">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
-          </div>
+          <div class="stars" aria-label="5 étoiles sur 5"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg></div>
           <blockquote>« Je recommande Plexi Création à 1000% ! Vraiment très satisfaite de son travail. Il a été à l'écoute du début à la fin et surtout il a su s'adapter à ce que je voulais mais aussi aux contraintes de ma vitrine. C'est quelqu'un de très créatif, à l'écoute et qui cherche vraiment à trouver une solution pour satisfaire son client. »</blockquote>
-          <figcaption>
-            <span class="av">SS</span>
-            <span class="who"><strong>Samira Safir</strong><span>Avis Google</span></span>
-          </figcaption>
+          <figcaption><span class="av">SS</span><span class="who"><strong>Samira Safir</strong><span>Avis Google</span></span></figcaption>
         </figure>
         <figure class="quote reveal">
-          <div class="stars" aria-label="5 sur 5">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
-          </div>
+          <div class="stars" aria-label="5 étoiles sur 5"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg></div>
           <blockquote>« Travail de grande qualité, finitions impeccables et très soignées. Les portes en plexiglas de notre vitrine ont été réalisées sur mesure avec beaucoup de précision. Le résultat est esthétique, solide et très pratique au quotidien. Artisan sérieux, à l'écoute, respect des délais et excellent rapport qualité-prix. »</blockquote>
-          <figcaption>
-            <span class="av">AA</span>
-            <span class="who"><strong>Abdellah Aidouch</strong><span>Avis Google</span></span>
-          </figcaption>
+          <figcaption><span class="av">AA</span><span class="who"><strong>Abdellah Aidouch</strong><span>Avis Google</span></span></figcaption>
         </figure>
         <figure class="quote reveal">
-          <div class="stars" aria-label="5 sur 5">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
-          </div>
+          <div class="stars" aria-label="5 étoiles sur 5"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg></div>
           <blockquote>« Très bon travail et service client au top ! (professionnel et réactif) »</blockquote>
-          <figcaption>
-            <span class="av">CA</span>
-            <span class="who"><strong>Clément Anglade</strong><span>Avis Google</span></span>
-          </figcaption>
+          <figcaption><span class="av">CA</span><span class="who"><strong>Clément Anglade</strong><span>Avis Google</span></span></figcaption>
         </figure>
       </div>
-
       <div class="google-review reveal">
-        <div class="gr-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .8-5 4.7 1.4 7L12 17.8 5.2 21l1.4-7-5-4.7 7-.8z"/></svg>
-        </div>
-        <div class="gr-body">
-          <h3>Laissez un avis Google <span aria-hidden="true">⭐</span></h3>
-          <p>Vous avez commandé chez nous ? Votre avis nous aide énormément à faire connaître Plexis Créations.</p>
-        </div>
-        <a class="btn btn-primary" href="https://www.google.com/search?kgmid=/g/11nhyf2xq9&q=Plexis+Creations#lrd=0x0:0x0,3" target="_blank" rel="noopener">
-          Laisser un avis
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        </a>
+        <div class="gr-body"><h3>Vous êtes client ?</h3><p>Laissez-nous un avis sur Google : ça prend une minute et ça nous aide énormément.</p></div>
+        <a class="btn btn-primary" href="https://share.google/oyJ3DGkLz1Il7uw8s" target="_blank" rel="noopener">Laisser un avis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
       </div>
     </div>
   </section>
@@ -578,187 +287,86 @@
     <div class="wrap faq-grid">
       <div class="section-head reveal" style="margin-bottom:0">
         <span class="eyebrow">FAQ</span>
-        <h2>Les questions qu'on nous pose <span class="grad-text">souvent</span></h2>
-        <p>Une autre question ? Écrivez-nous, un artisan vous répond.</p>
+        <h2>Vos questions, <span class="grad-text">nos réponses</span></h2>
+        <p>Une autre question ? Appelez-nous ou écrivez-nous, on vous répond directement.</p>
       </div>
       <div class="faq-list">
         <details class="faq-item reveal">
-          <summary>Quels sont vos délais de fabrication ?<span class="pm" aria-hidden="true"></span></summary>
-          <div class="a">Comptez 2 à 4 semaines pour une enseigne standard après validation du BAT, 4 à 8 semaines pour un projet complexe ou multi-sites. Nous communiquons un planning précis dès le devis signé.</div>
+          <summary>Faites-vous des pièces uniques ?<span class="pm" aria-hidden="true"></span></summary>
+          <div class="a">Oui. Tout est fait sur-mesure : une seule pièce ou plusieurs exemplaires, indiquez simplement la quantité souhaitée dans votre demande.</div>
         </details>
         <details class="faq-item reveal">
-          <summary>Travaillez-vous partout en France ?<span class="pm" aria-hidden="true"></span></summary>
-          <div class="a">Oui. L'atelier est en France et nos équipes de pose interviennent sur tout le territoire, métropole et grandes agglomérations. Pour les DOM-TOM, nous livrons et coordonnons avec un poseur local.</div>
+          <summary>Travaillez-vous avec les particuliers ?<span class="pm" aria-hidden="true"></span></summary>
+          <div class="a">Oui. On travaille avec les commerçants, les artisans et les entreprises, mais aussi avec les particuliers : mariage, anniversaire, cadeau personnalisé…</div>
         </details>
         <details class="faq-item reveal">
-          <summary>Y a-t-il une quantité minimum de commande ?<span class="pm" aria-hidden="true"></span></summary>
-          <div class="a">Non. Nous réalisons aussi bien une pièce unique qu'une série de plusieurs centaines d'exemplaires. Le prix unitaire s'ajuste selon le volume et la complexité.</div>
+          <summary>Livrez-vous ?<span class="pm" aria-hidden="true"></span></summary>
+          <div class="a">Oui, on livre vos créations. La zone et les modalités de livraison sont précisées avec votre devis.</div>
         </details>
         <details class="faq-item reveal">
-          <summary>Pouvez-vous partir de notre charte graphique ?<span class="pm" aria-hidden="true"></span></summary>
-          <div class="a">C'est notre méthode. Vous nous transmettez votre charte, vos fichiers vectoriels et vos références ; nous produisons plans techniques et rendus 3D fidèles avant toute fabrication.</div>
+          <summary>Que dois-je envoyer pour un devis ?<span class="pm" aria-hidden="true"></span></summary>
+          <div class="a">Les dimensions approximatives, l'usage de la pièce et, si vous les avez, une photo, un croquis ou votre logo. Pas de fichier technique ? Pas de souci, on vous accompagne.</div>
         </details>
         <details class="faq-item reveal">
-          <summary>Quels matériaux proposez-vous ?<span class="pm" aria-hidden="true"></span></summary>
-          <div class="a">Laiton, acier, aluminium, inox, bois massif, plexiglas, Corian, verre, résine. Nous vous envoyons des échantillons physiques pour choisir en connaissance de cause.</div>
+          <summary>Quels sont les délais ?<span class="pm" aria-hidden="true"></span></summary>
+          <div class="a">Ils dépendent de la taille et de la complexité du projet. On vous donne un délai précis avec le devis. Pour un mariage ou un événement, pensez à nous contacter suffisamment tôt.</div>
         </details>
         <details class="faq-item reveal">
-          <summary>Comment se passe la demande de devis ?<span class="pm" aria-hidden="true"></span></summary>
-          <div class="a">Vous remplissez le formulaire ci-dessous ou vous nous appelez. Nous revenons vers vous sous 48 h ouvrées avec une première estimation, puis un devis détaillé après échange ou visite sur site.</div>
+          <summary>Le devis est-il payant ?<span class="pm" aria-hidden="true"></span></summary>
+          <div class="a">Non, le devis est gratuit et sans engagement.</div>
         </details>
       </div>
     </div>
   </section>
 
-  <!-- FINAL CTA -->
-  <section class="final" id="devis">
+  <section>
     <div class="wrap">
-      <div class="final-card reveal">
-        <div class="final-inner">
-          <div>
-            <span class="eyebrow">Parlons de votre projet</span>
-            <h2>Donnons une forme à votre <span class="grad-text">image de marque</span></h2>
-            <p>Décrivez votre besoin en quelques lignes. Un artisan vous rappelle sous 48 h avec un premier avis et une estimation.</p>
-            <ul>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Devis gratuit et sans engagement</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Conseil matières dès le premier échange</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Un interlocuteur unique du croquis à la pose</li>
-            </ul>
-          </div>
-          <form id="devisForm" action="https://formsubmit.co/plexiscreations@gmail.com" method="POST">
-            <div class="field">
-              <label for="nom">Nom &amp; prénom</label>
-              <input id="nom" name="nom" type="text" required placeholder="Camille Mercier">
-            </div>
-            <div class="field">
-              <label for="entreprise">Entreprise</label>
-              <input id="entreprise" name="entreprise" type="text" required placeholder="Maison Mercier">
-            </div>
-            <div class="field">
-              <label for="email">Email professionnel</label>
-              <input id="email" name="email" type="email" required placeholder="camille@maison-mercier.fr">
-            </div>
-            <div class="field">
-              <label for="type">Type de projet</label>
-              <select id="type" name="type">
-                <option>Enseigne / façade</option>
-                <option>Signalétique intérieure</option>
-                <option>Objets personnalisés</option>
-                <option>Sur-mesure / prototypage</option>
-                <option>Déploiement multi-sites</option>
-                <option>Autre</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="message">Votre projet en quelques mots</label>
-              <textarea id="message" name="message" placeholder="Lieu, dimensions approximatives, échéance souhaitée…"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">
-              Envoyer ma demande
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-            </button>
-            <p class="form-note">Ou par téléphone : <a href="tel:+33609980925" style="color:var(--blue)">06-09-98-09-25</a> · Lun–Ven 9h–18h</p>
-          </form>
+      <div class="cta-band reveal">
+        <span class="eyebrow">Devis gratuit</span>
+        <h2>Une idée ? <span class="grad-text">On la fabrique.</span></h2>
+        <p>Décrivez votre besoin en quelques lignes, on revient vers vous avec des conseils et un devis gratuit.</p>
+        <div class="hero-cta">
+          <a href="devis.html" class="btn btn-primary">Demander un devis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a href="tel:+33609980925" class="btn btn-ghost"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 06 09 98 09 25</a>
         </div>
       </div>
     </div>
   </section>
-
 </main>
 
 <footer>
   <div class="wrap">
-    <div class="foot-grid">
+    <div class="foot-grid four">
       <div class="foot-brand">
-        <a href="#top" class="brand">
-          <span class="mark">P</span>
-          <span>Plexis Créations<small>Atelier français</small></span>
-        </a>
-        <p>Création artisanale sur-mesure pour les professionnels : enseignes, signalétique et objets personnalisés, fabriqués en France.</p>
+        <a href="index.html" class="brand"><img src="images/logo.png" alt="" width="42" height="42" loading="lazy"><span>Plexis Créations<small>Gravure &amp; découpe laser</small></span></a>
+        <p>Fabrication sur-mesure en plexiglas, gravure et découpe laser, avec livraison. Pour les professionnels et les particuliers.</p>
       </div>
-      <div>
-        <h5>Savoir-faire</h5>
-        <ul>
-          <li><a href="#savoir-faire">Enseignes &amp; façades</a></li>
-          <li><a href="#savoir-faire">Signalétique</a></li>
-          <li><a href="#savoir-faire">Objets personnalisés</a></li>
-          <li><a href="#savoir-faire">Prototypage</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Explorer</h5>
-        <ul>
-          <li><a href="#realisations">Réalisations</a></li>
-          <li><a href="#avis">Avis clients</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#devis">Demander un devis</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Contact</h5>
-        <ul>
-          <li><a href="mailto:plexiscreations@gmail.com">plexiscreations@gmail.com</a></li>
-          <li><a href="tel:+33609980925">06-09-98-09-25</a></li>
-          <li><a href="https://instagram.com/plexis_creations" target="_blank" rel="noopener">Instagram @plexis_creations</a></li>
-        </ul>
-      </div>
+      <div><h5>Nos univers</h5><ul><li><a href="mariage-evenementiel.html">Mariage & événementiel</a></li><li><a href="boulangerie-patisserie.html">Boulangerie & pâtisserie</a></li><li><a href="marches.html">Marchés & commerces de bouche</a></li><li><a href="artisans-commercants.html">Artisans & commerçants</a></li></ul></div>
+      <div><h5>Explorer</h5><ul>
+        <li><a href="index.html#atelier">L'atelier</a></li>
+        <li><a href="index.html#savoir-faire">Savoir-faire</a></li>
+        <li><a href="index.html#realisations">Créations</a></li>
+        <li><a href="index.html#avis">Avis clients</a></li>
+        <li><a href="devis.html">Demander un devis</a></li>
+      </ul></div>
+      <div><h5>Contact</h5><ul>
+        <li><a href="tel:+33609980925">06 09 98 09 25</a></li>
+        <li><a href="mailto:plexiscreations@gmail.com">plexiscreations@gmail.com</a></li>
+        <li><a href="https://instagram.com/plexis_creations" target="_blank" rel="noopener">Instagram @plexis_creations</a></li>
+      </ul></div>
     </div>
-    <div class="foot-bottom">
-      <span>© 2026 Plexis Créations — Tous droits réservés.</span>
-      <span>Mentions légales · Confidentialité · CGV</span>
-    </div>
+    <div class="foot-bottom">© <span id="year">2026</span> Plexis Créations</div>
   </div>
 </footer>
 
-<script>
-  // Header shadow on scroll
-  var header = document.getElementById('header');
-  var onScroll = function(){ header.classList.toggle('scrolled', window.scrollY > 8); };
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive:true });
+<a class="call-fab" href="tel:+33609980925" aria-label="Appeler Plexis Créations"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
 
-  // Mobile menu
-  var toggle = document.getElementById('menuToggle');
-  var links = document.getElementById('navLinks');
-  toggle.addEventListener('click', function(){
-    var open = links.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    toggle.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
-  });
-  links.addEventListener('click', function(e){
-    if (e.target.tagName === 'A') {
-      links.classList.remove('open');
-      toggle.setAttribute('aria-expanded','false');
-    }
-  });
-
-  // Scroll reveal (subtle fade+rise, staggered)
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var revealEls = document.querySelectorAll('.reveal');
-  if (reduce || !('IntersectionObserver' in window)) {
-    revealEls.forEach(function(el){ el.classList.add('in'); });
-  } else {
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if (!entry.isIntersecting) return;
-        var siblings = Array.prototype.slice.call(entry.target.parentElement.children).filter(function(n){ return n.classList.contains('reveal'); });
-        var idx = Math.max(0, siblings.indexOf(entry.target));
-        entry.target.style.transitionDelay = Math.min(idx * 60, 300) + 'ms';
-        entry.target.classList.add('in');
-        io.unobserve(entry.target);
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-    revealEls.forEach(function(el){ io.observe(el); });
-  }
-
-  // Single-open accordion
-  var items = document.querySelectorAll('.faq-item');
-  items.forEach(function(item){
-    item.addEventListener('toggle', function(){
-      if (!item.open) return;
-      items.forEach(function(other){ if (other !== item) other.open = false; });
-    });
-  });
-</script>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo agrandie">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Fermer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Photo précédente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+  <figure><img id="lbImg" src="" alt=""><figcaption id="lbCap"></figcaption></figure>
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Photo suivante"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+</div>
+<script src="script.js"></script>
 </body>
-</html> 
+</html>
