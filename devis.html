@@ -46,7 +46,7 @@
 </header>
 <main id="top">
 
-  <section class="page-hero" id="devis">
+  <section class="page-hero final" id="devis">
     <div class="wrap">
       <div class="final-card reveal">
         <div class="final-inner">
@@ -78,24 +78,36 @@
             </div>
             <div class="row2">
               <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email"></div>
-              <div class="field"><label for="tel">Téléphone <i>(facultatif)</i></label><input id="tel" name="Téléphone" type="tel" autocomplete="tel"></div>
+              <div class="field"><label for="tel">Téléphone</label><input id="tel" name="Téléphone" type="tel" required autocomplete="tel"></div>
             </div>
+            <div class="field"><label for="adresse">Adresse <i>(pour le devis et la livraison)</i></label>
+              <input id="adresse" name="Adresse" type="text" autocomplete="street-address" placeholder="N° et rue, code postal, ville"></div>
             <div class="row2">
               <div class="field"><label for="univers">Votre univers</label><select id="univers" name="Univers"><option value="Pas encore défini" data-key="">Je ne sais pas encore</option><option value="Mariage & événementiel" data-key="mariage">Mariage & événementiel</option><option value="Boulangerie & pâtisserie" data-key="boulangerie">Boulangerie & pâtisserie</option><option value="Marchés & commerces de bouche" data-key="marches">Marchés & commerces de bouche</option><option value="Artisans & commerçants" data-key="artisans">Artisans & commerçants</option><option value="Particulier / cadeau" data-key="particulier">Particulier / cadeau</option></select></div>
-              <div class="field"><label for="type">Type de projet</label><select id="type" name="Type de projet">
+              <div class="field"><label for="type">Type de projet</label><select id="type" name="Projet">
                 <option>Fabrication sur-mesure</option><option>Gravure laser</option><option>Découpe laser</option>
                 <option>Vitrine / protection</option><option>Présentoir / PLV</option><option>Objet personnalisé / cadeau</option><option>Autre</option>
               </select></div>
             </div>
+            <div class="field"><label for="pieces">Pièces souhaitées : quantité et dimensions</label>
+              <textarea id="pieces" name="Pièces" required placeholder="Une ligne par pièce, en cm. Ex. :&#10;10 boîtes de 10 × 20 × 30 cm&#10;1 panneau de protection de caisse de 95 × 113 cm"></textarea></div>
+            <div class="field"><label for="matiere">Couleur, épaisseur ou finition <i>(facultatif)</i></label>
+              <input id="matiere" name="Finition" type="text" placeholder="Ex. : transparent, noir, gravure du logo…"></div>
+            <fieldset class="checks">
+              <legend>Options</legend>
+              <label><input type="checkbox" name="Gravure" value="Oui"> Gravure (logo, texte, motif)</label>
+              <label><input type="checkbox" name="Montage" value="Oui"> Montage / assemblage</label>
+              <label><input type="checkbox" name="Accessoires" value="Oui"> Rails, charnières, visserie</label>
+            </fieldset>
             <div class="row2">
               <div class="field"><label for="livraison">Livraison souhaitée ?</label><select id="livraison" name="Livraison">
                 <option>Oui</option><option>Non, je viens chercher</option><option>Je ne sais pas encore</option></select></div>
-              <div class="field"><label for="date">Date souhaitée <i>(facultatif)</i></label><input id="date" name="Date souhaitée" type="date"></div>
+              <div class="field"><label for="date">Pour quand ? <i>(facultatif)</i></label><input id="date" name="Date" type="date"></div>
             </div>
-            <div class="field"><label for="message">Votre projet en quelques mots</label>
-              <textarea id="message" name="Message" required placeholder="Dimensions approximatives, quantité, usage, ville de livraison…"></textarea></div>
+            <div class="field"><label for="message">Précisions <i>(facultatif)</i></label>
+              <textarea id="message" name="Précisions" placeholder="Usage de la pièce, contraintes, idées…" style="min-height:80px"></textarea></div>
             <button type="submit" class="btn btn-primary">Envoyer ma demande <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
-            <p class="form-note">Vous pouvez aussi nous envoyer une photo ou un croquis par email ou sur Instagram.</p>
+            <p class="form-note">Vous avez un plan, un croquis ou une photo ? Envoyez-le par email à plexiscreations@gmail.com ou sur Instagram : il sera joint à votre devis.</p>
           </form>
         </div>
       </div>
@@ -124,7 +136,7 @@
         <li><a href="https://instagram.com/plexis_creations" target="_blank" rel="noopener">Instagram @plexis_creations</a></li>
       </ul></div>
     </div>
-    <div class="foot-bottom">© <span id="year">2026</span> Plexis Créations</div>
+    <div class="foot-bottom">© <span id="year">2026</span> Plexis Créations · SIRET 895 354 181 00011</div>
   </div>
 </footer>
 
